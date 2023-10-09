@@ -1,0 +1,32 @@
+{
+  "name": "blockchain-playground",
+  "version": "1.0.0",
+  "description": "blockchain playground project",
+  "keywords": [],
+  "author": "Andrea Pacchioni",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development && nodemon",
+    "build": "rimraf dist && tsc",
+    "start": "set NODE_ENV=production && node .",
+    "deploy:bnb:development": "cd my_bnb_coin && truffle migrate --network development",
+    "deploy:bnb:testnet": "cd my_bnb_coin && truffle migrate --network testnet",
+    "deploy:eth:development": "cd my_eth_coin && truffle migrate --network development",
+    "deploy:eth:testnet": "cd my_eth_coin && truffle migrate --network goerli",
+    "test:bnb": "cd my_bnb_coin && truffle test test/myinucoin.js",
+    "test:eth": "cd my_eth_coin && truffle test test/myinucoin.js"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.1",
+    "dotenv": "^16.3.1",
+    "web3": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.9",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
